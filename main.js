@@ -36,15 +36,16 @@ document.querySelector("#activate-xray").addEventListener("click", function() {
     `document.querySelectorAll()` method for these.
 */
 const allPowerSelect = document.querySelectorAll(".power");
-for(i = 0; i < allPowerSelect.length; i++){
+
+    allPowerSelect.forEach(item => {
     document.querySelector("#activate-all").addEventListener("click", function(){
-        allPowerSelect[i].classList.add("enabled");
-        allPowerSelect[i].classList.remove("disabled")
+        item.classList.add("enabled");
+        item.classList.remove("disabled")   
     })
-}
-for(i = 0; i < allPowerSelect.length; i++){
+})
+    allPowerSelect.forEach(key => {
     document.querySelector("#deactivate-all").addEventListener("click", function(){
-        allPowerSelect[i].classList.add("disabled");
-        allPowerSelect[i].classList.remove("enabled")
+        key.classList.add("disabled");
+        key.classList.remove("enabled")
     })
-}
+})
